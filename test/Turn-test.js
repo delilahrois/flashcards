@@ -29,9 +29,19 @@ describe('Turn', function() {
     expect(turn.returnGuess).to.be.a('function');
   });
 
-  it('should return the guess', function() {
+  it('should be able to return the guess', function() {
     const turn = new Turn('white tigers');
-    expect(turn.returnGuess).to.equal(turn.guess);
+    expect(turn.returnGuess()).to.equal('white tigers');
+  });
+
+  it('should be able to return the card', function() {
+    const turn = new Turn();
+    expect(turn.returnCard()).to.equal(turn.card);
   })
+
+  // it.skip('should be able to evaluate the guess', function() {
+  //   const turn = new Turn();
+  //   expect(turn.evaluateGuess()).to.equal
+  // })
 
 });
