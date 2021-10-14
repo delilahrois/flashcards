@@ -9,20 +9,16 @@ class Round {
   }
 
   returnCurrentCard() {
-    return this.deck[0];
+    return this.deck.cards[this.turns];
   }
 
-  takeTurn(guess, card) {
-    this.turns++;
-    let newTurn = new Turn(guess, card);
-    if (guess !== newTurn.card.correctAnswer) {
-      this.incorrectGuesses.push(newTurn.card.id);
-      this.deck.cards.shift();
-      return 'Incorrect!';
-    } else {
-      this.deck.cards.shift();
-      return 'Correct!';
+  takeTurn(guess) {
+    // this.turns++;
+    let newTurn = new Turn(guess, this.returnCurrentCard());
+    if (!newTurn.evaluateGuess()) {
+      this.incorrectGuesses.push(this.returnCurrentCard().id);
     }
+    this.turns++;
   }
 
   calculatePercentCorrect() {
@@ -33,8 +29,8 @@ class Round {
   }
 
   endRound() {
-    return `** Round over! ** You answered 
-    ${this.percentCorrect}% of the questions correctly!`;
+    console.log(`** Round over! ** You answered 
+    ${this.percentCorrect}% of the questions correctly!`);
   }
 }
 

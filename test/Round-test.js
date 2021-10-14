@@ -26,7 +26,7 @@ describe('Round', function() {
     deck = new Deck(cards);
     firstCard = deck[0];
     round = new Round(deck);
-  })
+  });
 
 
   it('should be a function', function() {
