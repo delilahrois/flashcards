@@ -24,7 +24,6 @@ describe('Round', function() {
 
     cards = [card1, card2, card3];
     deck = new Deck(cards);
-    firstCard = deck[0];
     round = new Round(deck);
   });
 
@@ -35,7 +34,7 @@ describe('Round', function() {
 
   it('should let us know the first card in the deck', function() {
 
-    expect(round.returnCurrentCard()).to.equal(firstCard);
+    expect(round.returnCurrentCard()).to.equal(deck.cards[0]);
   });
 
   it('should have a method to update turns count', function() {
@@ -54,15 +53,5 @@ describe('Round', function() {
 
     expect(round.incorrectGuesses[0]).to.equal(2);
     expect(round.incorrectGuesses.length).to.equal(1);
-  });
-
-  it('should be able to calculate percentage of correct guesses', function() {
-
-    round.takeTurn('brown bears', card1);
-    round.takeTurn('aquamarine', card2);
-    round.takeTurn('Boston', card3);
-    round.takeTurn('llamas', card1)
-
-    expect(round.calculatePercentCorrect()).to.equal(50);
   });
 });

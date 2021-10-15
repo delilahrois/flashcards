@@ -3,8 +3,7 @@ const Card = require("./Card");
 class Turn {
   constructor(guess, card) {
     this.guess = guess;
-    this.card = new Card(card.id, card.question, card.answers, 
-      card.correctAnswer);
+    this.card = card;
   }
 
   returnGuess() {
