@@ -25,7 +25,6 @@ describe('Game', function() {
 
     cards = [card1, card2, card3];
     deck = new Deck(cards);
-    firstCard = deck[0];
     round = new Round(deck);
     game = new Game();
   });
@@ -34,8 +33,14 @@ describe('Game', function() {
     expect(Game).to.be.a('function');
   });
 
-  it('should keep track of the current round', function() {
-    expect(round.currentRound).to.be.an.instanceOf(Round);
+  it('value of currentRound should be null', function() {
+    expect(game.currentRound).to.equal(null);
   });
+
+  it('should create cards on start', () => {
+
+    expect(game.start()).to.include(Card);
+  })
+  //
 
 });
