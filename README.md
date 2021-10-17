@@ -30,4 +30,4 @@ To play this game...
 
 ## Project Spec
 
-The project spec and rubric can be found [here.](https://frontend.turing.edu/projects/flash-cards.html) 
+The project spec and rubric can be found [here.](https://frontend.turing.edu/projects/flash-cards.html)
